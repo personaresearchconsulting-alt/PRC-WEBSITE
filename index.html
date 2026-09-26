@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Persona Research & Consulting | Latihan CAT Online</title>
+
   <style>
     :root {
       --bg-main: #FAF9F6;
@@ -78,6 +80,21 @@
       color: var(--accent-rose);
     }
 
+    /* LATIHAN CAT NAV BUTTON */
+    .nav-links .nav-cat {
+      background-color: var(--btn-primary);
+      color: #ffffff !important;
+      padding: 8px 15px;
+      border-radius: 6px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .nav-links .nav-cat:hover {
+      background-color: var(--btn-primary-hover);
+      color: #ffffff !important;
+    }
+
     .nav-actions {
       display: flex;
       gap: 12px;
@@ -147,27 +164,44 @@
       display: flex;
       gap: 12px;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     .btn-hero-main {
       background-color: var(--btn-primary);
       color: #fff;
-      padding: 12px 24px;
+      padding: 13px 26px;
       border-radius: 6px;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 14px;
+      display: inline-block;
+    }
+
+    .btn-hero-main:hover {
+      background-color: var(--btn-primary-hover);
     }
 
     .btn-hero-sec {
       background-color: var(--card-bg);
       color: var(--text-main);
       border: 1px solid var(--border-color);
-      padding: 12px 24px;
+      padding: 13px 26px;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
       font-size: 14px;
+      display: inline-block;
+    }
+
+    .hero-cat-note {
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .hero-cat-note strong {
+      color: var(--text-main);
     }
 
     /* MAIN CONTAINER */
@@ -259,54 +293,6 @@
       margin-bottom: 20px;
     }
 
-    /* PRICING OPTIONS IN CARD */
-    .price-options {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .price-options.single-option {
-      grid-template-columns: 1fr;
-    }
-
-    .price-box {
-      border: 1px solid var(--border-color);
-      border-radius: 6px;
-      padding: 12px;
-      text-align: center;
-      background-color: var(--bg-main);
-    }
-
-    .price-duration {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-
-    .price-amount {
-      font-size: 15px;
-      font-weight: 800;
-      color: var(--text-main);
-      margin: 4px 0 8px 0;
-    }
-
-    .btn-select {
-      width: 100%;
-      background-color: var(--btn-primary);
-      color: #fff;
-      border: none;
-      padding: 8px 0;
-      border-radius: 4px;
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .btn-select:hover {
-      background-color: var(--btn-primary-hover);
-    }
-
     /* DURATION SELECTOR UI */
     .duration-selector-container {
       margin-top: auto;
@@ -373,7 +359,23 @@
       color: var(--text-main);
     }
 
-    /* PRICING SUMMARY SECTION */
+    .btn-select {
+      width: 100%;
+      background-color: var(--btn-primary);
+      color: #fff;
+      border: none;
+      padding: 8px 0;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-select:hover {
+      background-color: var(--btn-primary-hover);
+    }
+
+    /* PRICING SUMMARY */
     .pricing-summary {
       background-color: var(--bg-alt);
       border-top: 1px solid var(--border-color);
@@ -404,6 +406,42 @@
       font-size: 22px;
       font-weight: 800;
       margin-bottom: 8px;
+    }
+
+    /* ACCESS CAT CTA */
+    .cat-access-section {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 28px;
+      margin-top: 36px;
+      text-align: center;
+    }
+
+    .cat-access-section h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .cat-access-section p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .btn-cat-access {
+      display: inline-block;
+      background-color: var(--btn-primary);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .btn-cat-access:hover {
+      background-color: var(--btn-primary-hover);
     }
 
     /* CARA MEMBELI */
@@ -700,570 +738,1730 @@
 
     /* RESPONSIVE MOBILE */
     @media (max-width: 900px) {
-      .nav-links { display: none; }
-      .brand-logo { font-size: 12px; }
+      .nav-links {
+        display: none;
+      }
+
+      .brand-logo {
+        font-size: 12px;
+      }
     }
 
     @media (max-width: 640px) {
-      .hero h1 { font-size: 24px; }
-      .product-grid { grid-template-columns: 1fr; }
-      .tabs { flex-wrap: wrap; }
-      .price-options { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; }
+      .hero {
+        padding: 48px 20px;
+      }
+
+      .hero h1 {
+        font-size: 24px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn-hero-main,
+      .btn-hero-sec {
+        width: 100%;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tabs {
+        flex-wrap: wrap;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cat-access-section {
+        padding: 24px 18px;
+      }
+
+      .btn-cat-access {
+        width: 100%;
+      }
     }
   </style>
+
 </head>
+
 <body>
 
   <!-- HEADER -->
+
   <header>
     <div class="nav-container">
-      <a href="#" class="brand-logo">PERSONA RESEARCH & CONSULTING</a>
 
-      <nav class="nav-links">
-        <a href="#beranda">Beranda</a>
-        <a href="#latihan">Latihan CAT</a>
-        <a href="#harga">Harga</a>
-        <a href="#cara-membeli">Cara Membeli</a>
-        <a href="#tentang-kami">Tentang Kami</a>
-        <a href="#kontak">Kontak</a>
-      </nav>
+```
+  <a href="#beranda" class="brand-logo">
+    PERSONA RESEARCH & CONSULTING
+  </a>
 
-      <div class="nav-actions">
-        <button class="btn-cart" onclick="openCart()">
-          🛒 <span id="cart-count">0</span>
-        </button>
-        <button class="btn-login" onclick="openModal('login-modal')">Login</button>
-      </div>
-    </div>
+  <nav class="nav-links">
+    <a href="#beranda">Beranda</a>
+
+    <!-- AKSES UTAMA KE PERSONA CLASS -->
+    <a href="https://personaclass.web.id" class="nav-cat">
+      LATIHAN CAT
+    </a>
+
+    <a href="#harga">Harga</a>
+    <a href="#cara-membeli">Cara Membeli</a>
+    <a href="#tentang-kami">Tentang Kami</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <div class="nav-actions">
+    <button class="btn-cart" onclick="openCart()">
+      🛒 <span id="cart-count">0</span>
+    </button>
+
+    <button class="btn-login" onclick="openModal('login-modal')">
+      Login
+    </button>
+  </div>
+
+</div>
+```
+
   </header>
 
   <!-- HERO SECTION -->
+
   <section class="hero" id="beranda">
     <div class="hero-content">
-      <div class="hero-tag">Test Preparation • Research • Consulting</div>
-      <h1>Persiapan Tes yang Lebih Terarah</h1>
-      <p>Latihan CAT online untuk membantu Anda berlatih dengan lebih terstruktur dan memahami bentuk tes sebelum menghadapi seleksi.</p>
-      <div class="hero-buttons">
-        <a href="#latihan" class="btn-hero-main">LIHAT LATIHAN</a>
-        <a href="#cara-membeli" class="btn-hero-sec">CARA MEMBELI</a>
-      </div>
-    </div>
+
+```
+  <div class="hero-tag">
+    Test Preparation • Research • Consulting
+  </div>
+
+  <h1>Persiapan Tes yang Lebih Terarah</h1>
+
+  <p>
+    Latihan CAT online untuk membantu Anda berlatih dengan lebih
+    terstruktur dan memahami bentuk tes sebelum menghadapi seleksi.
+  </p>
+
+  <div class="hero-buttons">
+
+    <!-- TOMBOL CAT UTAMA -->
+    <a href="https://personaclass.web.id" class="btn-hero-main">
+      AKSES MENU LATIHAN CAT →
+    </a>
+
+    <a href="#harga" class="btn-hero-sec">
+      LIHAT HARGA
+    </a>
+
+  </div>
+
+  <div class="hero-cat-note">
+    <strong>Sudah memiliki akses?</strong>
+    Masuk melalui Menu Latihan CAT untuk membuka Persona Class dan mulai latihan.
+  </div>
+
+</div>
+```
+
   </section>
 
   <!-- KATALOG LATIHAN -->
+
   <section class="section-container" id="latihan">
-    <div class="section-header">
-      <h2>Pilih Latihan</h2>
-      <p>Pilih jenis tes yang ingin Anda latih.</p>
-    </div>
 
-    <!-- TABS CATEGORY -->
-    <div class="tabs">
-      <button class="tab-btn active" onclick="filterCategory('POLRI', this)">POLRI</button>
-      <button class="tab-btn" onclick="filterCategory('TNI', this)">TNI</button>
-      <button class="tab-btn" onclick="filterCategory('KEDINASAN', this)">KEDINASAN</button>
-    </div>
+```
+<div class="section-header">
+  <h2>Pilih Latihan yang Ingin Dibeli</h2>
+  <p>
+    Pilih jenis tes dan masa akses yang sesuai dengan kebutuhan Anda.
+  </p>
+</div>
 
-    <!-- PRODUCT GRID -->
-    <div class="product-grid" id="product-list">
-      <!-- Dynamic Products Inserted via JS -->
-    </div>
+<!-- CATEGORY TABS -->
+<div class="tabs">
+
+  <button class="tab-btn active"
+    onclick="filterCategory('POLRI', this)">
+    POLRI
+  </button>
+
+  <button class="tab-btn"
+    onclick="filterCategory('TNI', this)">
+    TNI
+  </button>
+
+  <button class="tab-btn"
+    onclick="filterCategory('KEDINASAN', this)">
+    KEDINASAN
+  </button>
+
+</div>
+
+<!-- PRODUCT GRID -->
+<div class="product-grid" id="product-list">
+  <!-- Dynamic Products Inserted via JS -->
+</div>
+
+
+<!-- AKSES CAT -->
+<div class="cat-access-section">
+
+  <h3>Sudah Memiliki Akses Latihan?</h3>
+
+  <p>
+    Akses seluruh menu latihan Anda melalui Persona Class.
+    Klik tombol di bawah untuk masuk ke portal latihan CAT.
+  </p>
+
+  <a href="https://personaclass.web.id" class="btn-cat-access">
+    MASUK KE MENU LATIHAN CAT →
+  </a>
+
+</div>
+```
+
   </section>
 
-  <!-- STRUKTUR HARGA SEDERHANA -->
+  <!-- HARGA -->
+
   <section class="pricing-summary section-container" id="harga">
-    <div class="section-header">
-      <h2>Harga</h2>
-      <p>Pilihan paket akses yang fleksibel sesuai kebutuhan belajar Anda.</p>
+
+```
+<div class="section-header">
+  <h2>Harga</h2>
+
+  <p>
+    Pilihan paket akses yang fleksibel sesuai kebutuhan belajar Anda.
+  </p>
+</div>
+
+<div class="summary-grid">
+
+  <div class="summary-card">
+    <h3>14 Hari</h3>
+
+    <div class="summary-price">
+      Rp30.000
     </div>
 
-    <div class="summary-grid">
-      <div class="summary-card">
-        <h3>14 Hari</h3>
-        <div class="summary-price">Rp30.000</div>
-        <p style="font-size: 12px; color: var(--text-muted);">Akses individual 14 hari penuh.</p>
-      </div>
-      <div class="summary-card">
-        <h3>30 Hari</h3>
-        <div class="summary-price">Rp50.000</div>
-        <p style="font-size: 12px; color: var(--text-muted);">Akses individual 30 hari penuh.</p>
-      </div>
-      <div class="summary-card" style="border: 1px solid var(--accent-rose);">
-        <h3>Complete Package</h3>
-        <div class="summary-price">Rp125.000</div>
-        <p style="font-size: 12px; color: var(--text-muted);">Paket bundel lengkap 30 hari.</p>
-      </div>
+    <p style="font-size: 12px; color: var(--text-muted);">
+      Akses individual 14 hari penuh.
+    </p>
+  </div>
+
+
+  <div class="summary-card">
+    <h3>30 Hari</h3>
+
+    <div class="summary-price">
+      Rp50.000
     </div>
-    <div style="text-align: center; margin-top: 16px; font-size: 12px; color: var(--text-muted);">
-      Harga sudah termasuk akses latihan sesuai produk yang dipilih.
+
+    <p style="font-size: 12px; color: var(--text-muted);">
+      Akses individual 30 hari penuh.
+    </p>
+  </div>
+
+
+  <div class="summary-card"
+    style="border: 1px solid var(--accent-rose);">
+
+    <h3>Complete Package</h3>
+
+    <div class="summary-price">
+      Rp125.000
     </div>
+
+    <p style="font-size: 12px; color: var(--text-muted);">
+      Paket bundel lengkap 30 hari.
+    </p>
+
+  </div>
+
+</div>
+
+<div style="
+  text-align: center;
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+">
+  Harga sudah termasuk akses latihan sesuai produk yang dipilih.
+</div>
+```
+
   </section>
 
   <!-- CARA MEMBELI -->
-  <section class="section-container" id="cara-membeli">
-    <div class="section-header">
-      <h2>Cara Membeli</h2>
-      <p>Proses praktis dalam 4 langkah mudah.</p>
-    </div>
 
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num">01</div>
-        <h4>Pilih Tes</h4>
-        <p>Pilih modul latihan yang ingin Anda gunakan dari katalog.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">02</div>
-        <h4>Pilih Masa Akses</h4>
-        <p>Tentukan pilihan masa aktif 14 Hari atau 30 Hari.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">03</div>
-        <h4>Bayar</h4>
-        <p>Lakukan pembayaran instan menggunakan QRIS.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">04</div>
-        <h4>Mulai Latihan</h4>
-        <p>Setelah terverifikasi, akses latihan akan langsung aktif.</p>
-      </div>
-    </div>
+  <section class="section-container" id="cara-membeli">
+
+```
+<div class="section-header">
+  <h2>Cara Membeli</h2>
+
+  <p>
+    Proses praktis dalam 4 langkah mudah.
+  </p>
+</div>
+
+
+<div class="steps-grid">
+
+  <div class="step-card">
+    <div class="step-num">01</div>
+    <h4>Pilih Tes</h4>
+    <p>
+      Pilih modul latihan yang ingin Anda gunakan dari katalog.
+    </p>
+  </div>
+
+
+  <div class="step-card">
+    <div class="step-num">02</div>
+    <h4>Pilih Masa Akses</h4>
+    <p>
+      Tentukan pilihan masa aktif 14 Hari atau 30 Hari.
+    </p>
+  </div>
+
+
+  <div class="step-card">
+    <div class="step-num">03</div>
+    <h4>Bayar</h4>
+    <p>
+      Lakukan pembayaran instan menggunakan QRIS.
+    </p>
+  </div>
+
+
+  <div class="step-card">
+    <div class="step-num">04</div>
+    <h4>Mulai Latihan</h4>
+    <p>
+      Setelah terverifikasi, akses latihan dapat digunakan
+      melalui Menu Latihan CAT di Persona Class.
+    </p>
+  </div>
+
+</div>
+```
+
   </section>
 
   <!-- TENTANG KAMI -->
+
   <section class="about-section section-container" id="tentang-kami">
-    <div class="section-header">
-      <h2>Tentang Kami</h2>
-      <p>Mengenal Persona Research & Consulting dan Layanan Kami.</p>
+
+```
+<div class="section-header">
+  <h2>Tentang Kami</h2>
+
+  <p>
+    Mengenal Persona Research & Consulting dan Layanan Kami.
+  </p>
+</div>
+
+
+<div class="about-grid">
+
+  <!-- B2C -->
+  <div class="about-card">
+
+    <div>
+
+      <h3>Layanan Individu</h3>
+
+      <p>
+        Persona Research & Consulting menyediakan latihan tes
+        berbasis CAT untuk membantu peserta mempersiapkan diri
+        menghadapi berbagai jenis seleksi secara lebih terarah
+        dan terstruktur.
+      </p>
+
+      <p style="font-size: 13px; color: var(--text-muted);">
+        Akses latihan digunakan melalui Persona Class setelah
+        peserta memiliki akses yang sesuai.
+      </p>
+
     </div>
 
-    <div class="about-grid">
-      <!-- B2C / INDIVIDU -->
-      <div class="about-card">
-        <div>
-          <h3>Layanan Individu</h3>
-          <p>Persona Research & Consulting menyediakan latihan tes berbasis CAT untuk membantu peserta mempersiapkan diri menghadapi berbagai jenis seleksi secara lebih terarah dan terstruktur.</p>
-          <p style="font-size: 13px; color: var(--text-muted);">Akses dapat langsung dipilih secara mandiri melalui katalog latihan yang tersedia pada platform ini.</p>
-        </div>
-        <div class="about-tag">Test Preparation • Research • Consulting</div>
-      </div>
-
-      <!-- B2B / ORGANISASI -->
-      <div class="about-card">
-        <div>
-          <h3>Layanan Organisasi & B2B</h3>
-          <p>Persona Research & Consulting juga melayani kebutuhan B2B dan institusi, termasuk sekolah, lembaga pendidikan, perusahaan, dan organisasi yang membutuhkan layanan yang disesuaikan dengan kebutuhan mereka.</p>
-          <p style="font-size: 13px; color: var(--text-muted);">Kami menyediakan layanan untuk kebutuhan penyusunan, pengembangan, maupun konsultasi tes sesuai objektif organisasi.</p>
-          
-          <ul class="b2b-steps">
-            <li><span>1.</span> Hubungi Persona Research & Consulting</li>
-            <li><span>2.</span> Sampaikan Kebutuhan & Minta Proposal</li>
-            <li><span>3.</span> Diskusi & Penyesuaian Layanan</li>
-          </ul>
-        </div>
-
-        <div class="cta-container">
-          <a href="mailto:persona.research.consulting@gmail.com?subject=Permintaan%20Proposal%20Layanan%20B2B" class="btn-proposal">MINTA PROPOSAL (EMAIL)</a>
-          <a href="https://wa.me/6287742515786?text=Halo%20Persona%20Research%20%26%20Consulting,%20saya%20ingin%20meminta%20proposal%20layanan%20untuk%20organisasi." target="_blank" class="btn-proposal-sec">MINTA PROPOSAL (WA)</a>
-        </div>
-      </div>
+    <div class="about-tag">
+      Test Preparation • Research • Consulting
     </div>
+
+  </div>
+
+
+  <!-- B2B -->
+  <div class="about-card">
+
+    <div>
+
+      <h3>Layanan Organisasi & B2B</h3>
+
+      <p>
+        Persona Research & Consulting juga melayani kebutuhan B2B
+        dan institusi, termasuk sekolah, lembaga pendidikan,
+        perusahaan, dan organisasi yang membutuhkan layanan yang
+        disesuaikan dengan kebutuhan mereka.
+      </p>
+
+      <p style="font-size: 13px; color: var(--text-muted);">
+        Kami menyediakan layanan untuk kebutuhan penyusunan,
+        pengembangan, maupun konsultasi tes sesuai objektif organisasi.
+      </p>
+
+
+      <ul class="b2b-steps">
+
+        <li>
+          <span>1.</span>
+          Hubungi Persona Research & Consulting
+        </li>
+
+        <li>
+          <span>2.</span>
+          Sampaikan Kebutuhan & Minta Proposal
+        </li>
+
+        <li>
+          <span>3.</span>
+          Diskusi & Penyesuaian Layanan
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <div class="cta-container">
+
+      <a
+        href="mailto:persona.research.consulting@gmail.com?subject=Permintaan%20Proposal%20Layanan%20B2B"
+        class="btn-proposal">
+        MINTA PROPOSAL (EMAIL)
+      </a>
+
+      <a
+        href="https://wa.me/6287742515786?text=Halo%20Persona%20Research%20%26%20Consulting,%20saya%20ingin%20meminta%20proposal%20layanan%20untuk%20organisasi."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-proposal-sec">
+        MINTA PROPOSAL (WA)
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+```
+
   </section>
 
-  <!-- FOOTER & KONTAK -->
-  <footer id="kontak">
-    <div style="font-weight: 800; font-size: 16px; color: var(--text-main); margin-bottom: 4px;">
-      PERSONA RESEARCH & CONSULTING
-    </div>
-    <div style="font-size: 12px; margin-bottom: 12px;">Test Preparation • Research • Consulting</div>
-    
-    <div class="footer-links">
-      <a href="mailto:persona.research.consulting@gmail.com">Email Us</a>
-      <span>•</span>
-      <a href="https://wa.me/6287742515786" target="_blank">WhatsApp Chat</a>
-    </div>
+  <!-- FOOTER -->
 
-    <div style="margin-top: 16px; font-size: 12px;">
-      © 2026 Persona Research & Consulting. All rights reserved.
-    </div>
+  <footer id="kontak">
+
+```
+<div style="
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--text-main);
+  margin-bottom: 4px;
+">
+  PERSONA RESEARCH & CONSULTING
+</div>
+
+<div style="font-size: 12px; margin-bottom: 12px;">
+  Test Preparation • Research • Consulting
+</div>
+
+
+<div class="footer-links">
+
+  <a href="mailto:persona.research.consulting@gmail.com">
+    Email Us
+  </a>
+
+  <span>•</span>
+
+  <a
+    href="https://wa.me/6287742515786"
+    target="_blank"
+    rel="noopener noreferrer">
+    WhatsApp Chat
+  </a>
+
+</div>
+
+
+<div style="margin-top: 16px; font-size: 12px;">
+  © 2026 Persona Research & Consulting. All rights reserved.
+</div>
+```
+
   </footer>
 
   <!-- CART DRAWER -->
+
   <div class="drawer-overlay" id="cart-drawer">
-    <div class="drawer-box">
-      <div class="drawer-header">
-        <h3 style="font-size: 16px;">Keranjang Anda</h3>
-        <button class="drawer-close" onclick="closeCart()">×</button>
-      </div>
 
-      <div class="cart-items" id="cart-content">
-        <!-- Dynamic Cart Content -->
-      </div>
+```
+<div class="drawer-box">
 
-      <div class="drawer-footer" id="cart-footer">
-        <div class="total-row">
-          <span>Total:</span>
-          <span id="cart-total">Rp0</span>
-        </div>
-        <button class="btn-checkout" onclick="goToCheckout()">LANJUTKAN PEMBAYARAN</button>
-      </div>
+  <div class="drawer-header">
+
+    <h3 style="font-size: 16px;">
+      Keranjang Anda
+    </h3>
+
+    <button
+      class="drawer-close"
+      onclick="closeCart()">
+      ×
+    </button>
+
+  </div>
+
+
+  <div class="cart-items" id="cart-content">
+    <!-- Dynamic Cart Content -->
+  </div>
+
+
+  <div class="drawer-footer" id="cart-footer">
+
+    <div class="total-row">
+
+      <span>Total:</span>
+
+      <span id="cart-total">
+        Rp0
+      </span>
+
     </div>
+
+    <button
+      class="btn-checkout"
+      onclick="goToCheckout()">
+      LANJUTKAN PEMBAYARAN
+    </button>
+
+  </div>
+
+</div>
+```
+
   </div>
 
   <!-- CHECKOUT MODAL -->
+
   <div class="modal-overlay" id="checkout-modal">
-    <div class="modal-box">
-      <h3 style="font-size: 18px; margin-bottom: 16px;">Checkout</h3>
-      
-      <div id="checkout-summary" style="background: var(--bg-main); padding: 12px; border-radius: 6px; margin-bottom: 16px; font-size: 13px;">
-        <!-- Summary Dynamic -->
-      </div>
 
-      <div class="form-group">
-        <label>Nama Lengkap</label>
-        <input type="text" id="cust-name" placeholder="Masukkan nama Anda">
-      </div>
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" id="cust-email" placeholder="nama@email.com">
-      </div>
-      <div class="form-group">
-        <label>Nomor WhatsApp</label>
-        <input type="tel" id="cust-phone" placeholder="081234567890">
-      </div>
+```
+<div class="modal-box">
 
-      <button class="btn-checkout" onclick="processPayment()">BAYAR SEKARANG</button>
-      <button style="width: 100%; background: none; border: none; margin-top: 8px; cursor: pointer; font-size: 12px; color: var(--text-muted);" onclick="closeModal('checkout-modal')">Batal</button>
-    </div>
+  <h3 style="font-size: 18px; margin-bottom: 16px;">
+    Checkout
+  </h3>
+
+
+  <div
+    id="checkout-summary"
+    style="
+      background: var(--bg-main);
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      font-size: 13px;
+    ">
+    <!-- Summary Dynamic -->
+  </div>
+
+
+  <div class="form-group">
+    <label>Nama Lengkap</label>
+
+    <input
+      type="text"
+      id="cust-name"
+      placeholder="Masukkan nama Anda">
+  </div>
+
+
+  <div class="form-group">
+    <label>Email</label>
+
+    <input
+      type="email"
+      id="cust-email"
+      placeholder="nama@email.com">
+  </div>
+
+
+  <div class="form-group">
+    <label>Nomor WhatsApp</label>
+
+    <input
+      type="tel"
+      id="cust-phone"
+      placeholder="081234567890">
+  </div>
+
+
+  <button
+    class="btn-checkout"
+    onclick="processPayment()">
+    BAYAR SEKARANG
+  </button>
+
+
+  <button
+    style="
+      width: 100%;
+      background: none;
+      border: none;
+      margin-top: 8px;
+      cursor: pointer;
+      font-size: 12px;
+      color: var(--text-muted);
+    "
+    onclick="closeModal('checkout-modal')">
+    Batal
+  </button>
+
+</div>
+```
+
   </div>
 
   <!-- LOGIN MODAL -->
+
   <div class="modal-overlay" id="login-modal">
-    <div class="modal-box">
-      <h3 style="font-size: 18px; margin-bottom: 16px;">Login Peserta</h3>
-      
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" id="login-email" placeholder="email@domain.com">
-      </div>
-      <div class="form-group">
-        <label>Password</label>
-        <input type="password" id="login-pass" placeholder="Password Anda">
-      </div>
 
-      <button class="btn-checkout" onclick="performLogin()">MASUK</button>
+```
+<div class="modal-box">
 
-      <div style="text-align: center; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
-        <a href="#" style="color: var(--text-main);">Belum punya akun? Daftar</a> | 
-        <a href="#" style="color: var(--text-main);">Lupa password?</a>
-      </div>
-      <button style="width: 100%; background: none; border: none; margin-top: 12px; cursor: pointer; font-size: 12px; color: var(--text-muted);" onclick="closeModal('login-modal')">Tutup</button>
-    </div>
+  <h3 style="font-size: 18px; margin-bottom: 16px;">
+    Login Peserta
+  </h3>
+
+
+  <div class="form-group">
+
+    <label>Email</label>
+
+    <input
+      type="email"
+      id="login-email"
+      placeholder="email@domain.com">
+
+  </div>
+
+
+  <div class="form-group">
+
+    <label>Password</label>
+
+    <input
+      type="password"
+      id="login-pass"
+      placeholder="Password Anda">
+
+  </div>
+
+
+  <button
+    class="btn-checkout"
+    onclick="performLogin()">
+    MASUK
+  </button>
+
+
+  <div style="
+    text-align: center;
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--text-muted);
+  ">
+
+    <a href="#" style="color: var(--text-main);">
+      Belum punya akun? Daftar
+    </a>
+
+    |
+
+    <a href="#" style="color: var(--text-main);">
+      Lupa password?
+    </a>
+
+  </div>
+
+
+  <button
+    style="
+      width: 100%;
+      background: none;
+      border: none;
+      margin-top: 12px;
+      cursor: pointer;
+      font-size: 12px;
+      color: var(--text-muted);
+    "
+    onclick="closeModal('login-modal')">
+    Tutup
+  </button>
+
+</div>
+```
+
   </div>
 
   <!-- DASHBOARD MODAL -->
+
   <div class="modal-overlay" id="dashboard-modal">
-    <div class="modal-box" style="max-width: 500px;">
-      <h3 style="font-size: 18px; margin-bottom: 4px;">Halo, Peserta PRC</h3>
-      <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px;">Selamat datang kembali di portal latihan Anda.</p>
 
-      <div style="font-weight: 700; font-size: 14px; margin-bottom: 10px;">Latihan Saya</div>
+```
+<div class="modal-box" style="max-width: 500px;">
 
-      <div style="border: 1px solid var(--border-color); padding: 12px; border-radius: 6px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
-        <div>
-          <div style="font-weight: 700; font-size: 13px;">Tes Kecerdasan — POLRI</div>
-          <div style="font-size: 11px; color: var(--text-muted);">30 Hari • Aktif sampai 17 Oktober 2026</div>
-        </div>
-        <button class="btn-select" style="padding: 6px 12px;" onclick="alert('Membuka modul latihan...')">MULAI LATIHAN</button>
-      </div>
+  <h3 style="font-size: 18px; margin-bottom: 4px;">
+    Halo, Peserta PRC
+  </h3>
 
-      <div style="border: 1px solid var(--border-color); padding: 12px; border-radius: 6px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; background: #FFF5F5;">
-        <div>
-          <div style="font-weight: 700; font-size: 13px;">Tes Kecermatan — POLRI</div>
-          <div style="font-size: 11px; color: var(--text-muted);">14 Hari • Sudah berakhir</div>
-        </div>
-        <button class="btn-select" style="padding: 6px 12px; background: #6F7278;" onclick="alert('Mengarahkan ke pembelian...')">BELI LAGI</button>
-      </div>
+  <p style="
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  ">
+    Selamat datang kembali di portal latihan Anda.
+  </p>
 
-      <button class="btn-checkout" style="background: var(--bg-alt); color: var(--text-main); border: 1px solid var(--border-color);" onclick="closeModal('dashboard-modal')">Keluar</button>
-    </div>
+
+  <div style="
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 10px;
+  ">
+    Latihan Saya
   </div>
 
-  <!-- CONFLICT CONFIRMATION MODAL -->
-  <div class="modal-overlay" id="conflict-modal">
-    <div class="modal-box">
-      <h3 style="font-size: 16px; margin-bottom: 8px;">Ganti Pilihan Durasi?</h3>
-      <p id="conflict-msg" style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;"></p>
-      
-      <button class="btn-checkout" id="btn-confirm-replace">Ganti Durasi</button>
-      <button style="width: 100%; background: none; border: none; margin-top: 8px; cursor: pointer; font-size: 12px; color: var(--text-muted);" onclick="closeModal('conflict-modal')">Batal</button>
+
+  <div style="
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  ">
+
+    <div>
+
+      <div style="font-weight: 700; font-size: 13px;">
+        Tes Kecerdasan — POLRI
+      </div>
+
+      <div style="font-size: 11px; color: var(--text-muted);">
+        30 Hari • Aktif sampai 17 Oktober 2026
+      </div>
+
     </div>
+
+
+    <a
+      href="https://personaclass.web.id"
+      class="btn-select"
+      style="
+        padding: 6px 12px;
+        text-decoration: none;
+        text-align: center;
+      ">
+      MULAI LATIHAN
+    </a>
+
+  </div>
+
+
+  <div style="
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFF5F5;
+  ">
+
+    <div>
+
+      <div style="font-weight: 700; font-size: 13px;">
+        Tes Kecermatan — POLRI
+      </div>
+
+      <div style="font-size: 11px; color: var(--text-muted);">
+        14 Hari • Sudah berakhir
+      </div>
+
+    </div>
+
+
+    <button
+      class="btn-select"
+      style="
+        padding: 6px 12px;
+        background: #6F7278;
+      "
+      onclick="alert('Mengarahkan ke pembelian...')">
+      BELI LAGI
+    </button>
+
+  </div>
+
+
+  <button
+    class="btn-checkout"
+    style="
+      background: var(--bg-alt);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    "
+    onclick="closeModal('dashboard-modal')">
+    Keluar
+  </button>
+
+</div>
+```
+
+  </div>
+
+  <!-- CONFLICT MODAL -->
+
+  <div class="modal-overlay" id="conflict-modal">
+
+```
+<div class="modal-box">
+
+  <h3 style="font-size: 16px; margin-bottom: 8px;">
+    Ganti Pilihan Durasi?
+  </h3>
+
+  <p
+    id="conflict-msg"
+    style="
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    ">
+  </p>
+
+
+  <button
+    class="btn-checkout"
+    id="btn-confirm-replace">
+    Ganti Durasi
+  </button>
+
+
+  <button
+    style="
+      width: 100%;
+      background: none;
+      border: none;
+      margin-top: 8px;
+      cursor: pointer;
+      font-size: 12px;
+      color: var(--text-muted);
+    "
+    onclick="closeModal('conflict-modal')">
+    Batal
+  </button>
+
+</div>
+```
+
   </div>
 
   <script>
-    /* PRODUCTS DATA STRUCTURE */
+
+    /* =========================================
+       PRODUCTS DATA
+    ========================================= */
+
     const PRODUCTS_DATA = [
-      // POLRI
-      { baseId: 'polri-kecerdasan', category: 'POLRI', title: 'Tes Kecerdasan', desc: 'Latihan CAT Tes Kecerdasan POLRI.', p14: 30000, p30: 50000 },
-      { baseId: 'polri-kepribadian', category: 'POLRI', title: 'Tes Kepribadian', desc: 'Latihan CAT Tes Kepribadian POLRI.', p14: 30000, p30: 50000 },
-      { baseId: 'polri-tkp', category: 'POLRI', title: 'TKP', desc: 'Latihan CAT Tes Karakteristik Pribadi POLRI.', p14: 30000, p30: 50000 },
-      { baseId: 'polri-kecermatan', category: 'POLRI', title: 'Tes Kecermatan', desc: 'Latihan Tes Kecermatan & Angka Hilang.', p14: 30000, p30: 50000 },
-      { baseId: 'polri-komputer', category: 'POLRI', title: 'Tes Komputer', desc: 'Latihan CAT Pengetahuan Komputer.', p14: 30000, p30: 50000 },
-      { baseId: 'polri-ami', category: 'POLRI', title: 'AMI', desc: 'Latihan CAT Penelusuran Mental Kepribadian.', p14: 30000, p30: 50000 },
-      { baseId: 'polri-pmk', category: 'POLRI', title: 'PMK', desc: 'Latihan CAT Penelusuran Masalah Kemasyarakatan.', p14: 30000, p30: 50000 },
-      { baseId: 'polri-complete', category: 'POLRI', title: 'Complete POLRI', desc: 'Bundel lengkap: Kecerdasan + Kepribadian + Kecermatan.', isComplete: true, p30: 125000 },
 
-      // TNI
-      { baseId: 'tni-kecerdasan', category: 'TNI', title: 'Tes Kecerdasan Umum', desc: 'Latihan CAT Kecerdasan Umum Seleksi TNI.', p14: 30000, p30: 50000 },
-      { baseId: 'tni-armyalpha', category: 'TNI', title: 'Army Alpha — CAT', desc: 'Simulasi Psikotes Army Alpha berbasis CAT.', p14: 30000, p30: 50000 },
-      { baseId: 'tni-mental', category: 'TNI', title: 'Mental Kepribadian Militer', desc: 'Latihan Tes Mental Kepribadian Militer.', p14: 30000, p30: 50000 },
-      { baseId: 'tni-koran', category: 'TNI', title: 'Tes Koran', desc: 'Latihan Ketahanan & Ketelitian Tes Koran.', p14: 30000, p30: 50000 },
+      /* POLRI */
 
-      // KEDINASAN
-      { baseId: 'kedinasan-tiu', category: 'KEDINASAN', title: 'TIU', desc: 'Tes Intelegensia Umum Seleksi Kedinasan.', p14: 30000, p30: 50000 },
-      { baseId: 'kedinasan-twk', category: 'KEDINASAN', title: 'TWK', desc: 'Tes Wawasan Kebangsaan Seleksi Kedinasan.', p14: 30000, p30: 50000 },
-      { baseId: 'kedinasan-tkp', category: 'KEDINASAN', title: 'TKP', desc: 'Tes Karakteristik Pribadi Seleksi Kedinasan.', p14: 30000, p30: 50000 },
-      { baseId: 'kedinasan-complete', category: 'KEDINASAN', title: 'SKD Complete', desc: 'Bundel lengkap SKD: TIU + TWK + TKP.', isComplete: true, p30: 125000 }
+      {
+        baseId: 'polri-kecerdasan',
+        category: 'POLRI',
+        title: 'Tes Kecerdasan',
+        desc: 'Latihan CAT Tes Kecerdasan POLRI.',
+        p14: 30000,
+        p30: 50000
+      },
+
+      {
+        baseId: 'polri-kepribadian',
+        category: 'POLRI',
+        title: 'Tes Kepribadian',
+        desc: 'Latihan CAT Tes Kepribadian POLRI.',
+        p14: 30000,
+        p30: 50000
+      },
+
+      {
+        baseId: 'polri-tkp',
+        category: 'POLRI',
+        title: 'TKP',
+        desc: 'Latihan CAT Tes Karakteristik Pribadi POLRI.',
+        p14: 30000,
+        p30: 50000
+      },
+
+      {
+        baseId: 'polri-kecermatan',
+        category: 'POLRI',
+        title: 'Tes Kecermatan',
+        desc: 'Latihan Tes Kecermatan & Angka Hilang.',
+        p14: 30000,
+        p30: 50000
+      },
+
+      {
+        baseId: 'polri-komputer',
+        category: 'POLRI',
+        title: 'Tes Komputer',
+        desc: 'Latihan CAT Pengetahuan Komputer.',
+        p14: 30000,
+        p30: 50000
+      },
+
+      {
+        baseId: 'polri-ami',
+        category: 'POLRI',
+        title: 'AMI',
+        desc: 'Latihan CAT Penelusuran Mental Kepribadian.',
+        p14: 30000,
+        p30: 50000
+      },
+
+      {
+        baseId: 'polri-pmk',
+        category: 'POLRI',
+        title: 'PMK',
+        desc: 'Latihan CAT Penelusuran Masalah Kemasyarakatan.',
+        p14: 30000,
+        p30: 50000
+      },
+
+      {
+        baseId: 'polri-complete',
+        category: 'POLRI',
+        title: 'Complete POLRI',
+        desc: 'Bundel lengkap: Kecerdasan + Kepribadian + Kecermatan.',
+        isComplete: true,
+        p30: 125000
+      },
+
+
+      /* TNI */
+
+      {
+        baseId: 'tni-kecerdasan',
+        category: 'TNI',
+        title: 'Tes Kecerdasan Umum',
+        desc: 'Latihan CAT Kecerdasan Umum Seleksi TNI.',
+        p14: 30000,
+        p30: 50000
+      },
+
+      {
+        baseId: 'tni-armyalpha',
+        category: 'TNI',
+        title: 'Army Alpha — CAT',
+        desc: 'Simulasi Psikotes Army Alpha berbasis CAT.',
+        p14: 30000,
+        p30: 50000
+      },
+
+      {
+        baseId: 'tni-mental',
+        category: 'TNI',
+        title: 'Mental Kepribadian Militer',
+        desc: 'Latihan Tes Mental Kepribadian Militer.',
+        p14: 30000,
+        p30: 50000
+      },
+
+      {
+        baseId: 'tni-koran',
+        category: 'TNI',
+        title: 'Tes Koran',
+        desc: 'Latihan Ketahanan & Ketelitian Tes Koran.',
+        p14: 30000,
+        p30: 50000
+      },
+
+
+      /* KEDINASAN */
+
+      {
+        baseId: 'kedinasan-tiu',
+        category: 'KEDINASAN',
+        title: 'TIU',
+        desc: 'Tes Intelegensia Umum Seleksi Kedinasan.',
+        p14: 30000,
+        p30: 50000
+      },
+
+      {
+        baseId: 'kedinasan-twk',
+        category: 'KEDINASAN',
+        title: 'TWK',
+        desc: 'Tes Wawasan Kebangsaan Seleksi Kedinasan.',
+        p14: 30000,
+        p30: 50000
+      },
+
+      {
+        baseId: 'kedinasan-tkp',
+        category: 'KEDINASAN',
+        title: 'TKP',
+        desc: 'Tes Karakteristik Pribadi Seleksi Kedinasan.',
+        p14: 30000,
+        p30: 50000
+      },
+
+      {
+        baseId: 'kedinasan-complete',
+        category: 'KEDINASAN',
+        title: 'SKD Complete',
+        desc: 'Bundel lengkap SKD: TIU + TWK + TKP.',
+        isComplete: true,
+        p30: 125000
+      }
+
     ];
 
-    /* CART STATE */
-    let cart = JSON.parse(localStorage.getItem('prc_cart')) || [];
+
+    /* =========================================
+       CART STATE
+    ========================================= */
+
+    let cart =
+      JSON.parse(localStorage.getItem('prc_cart')) || [];
+
     let currentCategory = 'POLRI';
 
-    /* RENDER CATALOG */
+
+    /* =========================================
+       RENDER PRODUCTS
+    ========================================= */
+
     function renderProducts() {
-      const list = document.getElementById('product-list');
+
+      const list =
+        document.getElementById('product-list');
+
       list.innerHTML = '';
 
-      const filtered = PRODUCTS_DATA.filter(p => p.category === currentCategory);
+      const filtered =
+        PRODUCTS_DATA.filter(
+          p => p.category === currentCategory
+        );
+
 
       filtered.forEach(p => {
-        const card = document.createElement('div');
-        card.className = `product-card ${p.isComplete ? 'complete-card' : ''}`;
+
+        const card =
+          document.createElement('div');
+
+        card.className =
+          `product-card ${p.isComplete ? 'complete-card' : ''}`;
+
 
         if (p.isComplete) {
+
           card.innerHTML = `
+
             <div>
-              <div class="product-category">${p.category} • BUNDEL LENGKAP</div>
-              <div class="product-title">${p.title}</div>
-              <div class="product-desc">${p.desc}</div>
+
+              <div class="product-category">
+                ${p.category} • BUNDEL LENGKAP
+              </div>
+
+              <div class="product-title">
+                ${p.title}
+              </div>
+
+              <div class="product-desc">
+                ${p.desc}
+              </div>
+
             </div>
+
+
             <div class="price-options single-option">
+
               <div class="price-box">
-                <div class="price-duration">30 HARI</div>
-                <div class="price-amount">Rp${p.p30.toLocaleString('id-ID')}</div>
-                <button class="btn-select" onclick="addToCart('${p.baseId}', '${p.title}', '${p.category}', 30, ${p.p30})">PILIH ${p.title.toUpperCase()}</button>
+
+                <div class="price-duration">
+                  30 HARI
+                </div>
+
+                <div class="price-amount">
+                  Rp${p.p30.toLocaleString('id-ID')}
+                </div>
+
+                <button
+                  class="btn-select"
+                  onclick="addToCart(
+                    '${p.baseId}',
+                    '${p.title}',
+                    '${p.category}',
+                    30,
+                    ${p.p30}
+                  )">
+                  PILIH ${p.title.toUpperCase()}
+                </button>
+
               </div>
+
             </div>
           `;
+
         } else {
+
           card.innerHTML = `
+
             <div>
-              <div class="product-category">${p.category}</div>
-              <div class="product-title">${p.title}</div>
-              <div class="product-desc">${p.desc}</div>
-            </div>
-            <div class="duration-selector-container">
-              <div class="duration-selector-label">Pilih Masa Akses</div>
-              <div class="duration-options">
-                <label class="duration-option selected" id="opt-14-${p.baseId}" onclick="selectDurationOption('${p.baseId}', 14)">
-                  <div class="duration-left">
-                    <input type="radio" name="duration-${p.baseId}" value="14" class="duration-radio" checked>
-                    <span class="duration-text">14 Hari</span>
-                  </div>
-                  <span class="duration-price">Rp${p.p14.toLocaleString('id-ID')}</span>
-                </label>
-                <label class="duration-option" id="opt-30-${p.baseId}" onclick="selectDurationOption('${p.baseId}', 30)">
-                  <div class="duration-left">
-                    <input type="radio" name="duration-${p.baseId}" value="30" class="duration-radio">
-                    <span class="duration-text">30 Hari</span>
-                  </div>
-                  <span class="duration-price">Rp${p.p30.toLocaleString('id-ID')}</span>
-                </label>
+
+              <div class="product-category">
+                ${p.category}
               </div>
-              <button class="btn-select" onclick="handleProductSelect('${p.baseId}')">PILIH TES</button>
+
+              <div class="product-title">
+                ${p.title}
+              </div>
+
+              <div class="product-desc">
+                ${p.desc}
+              </div>
+
+            </div>
+
+
+            <div class="duration-selector-container">
+
+              <div class="duration-selector-label">
+                Pilih Masa Akses
+              </div>
+
+
+              <div class="duration-options">
+
+                <label
+                  class="duration-option selected"
+                  id="opt-14-${p.baseId}"
+                  onclick="selectDurationOption(
+                    '${p.baseId}',
+                    14
+                  )">
+
+                  <div class="duration-left">
+
+                    <input
+                      type="radio"
+                      name="duration-${p.baseId}"
+                      value="14"
+                      class="duration-radio"
+                      checked>
+
+                    <span class="duration-text">
+                      14 Hari
+                    </span>
+
+                  </div>
+
+                  <span class="duration-price">
+                    Rp${p.p14.toLocaleString('id-ID')}
+                  </span>
+
+                </label>
+
+
+                <label
+                  class="duration-option"
+                  id="opt-30-${p.baseId}"
+                  onclick="selectDurationOption(
+                    '${p.baseId}',
+                    30
+                  )">
+
+                  <div class="duration-left">
+
+                    <input
+                      type="radio"
+                      name="duration-${p.baseId}"
+                      value="30"
+                      class="duration-radio">
+
+                    <span class="duration-text">
+                      30 Hari
+                    </span>
+
+                  </div>
+
+                  <span class="duration-price">
+                    Rp${p.p30.toLocaleString('id-ID')}
+                  </span>
+
+                </label>
+
+              </div>
+
+
+              <button
+                class="btn-select"
+                onclick="handleProductSelect('${p.baseId}')">
+                PILIH TES
+              </button>
+
             </div>
           `;
+
         }
+
+
         list.appendChild(card);
+
       });
+
     }
+
+
+    /* =========================================
+       DURATION
+    ========================================= */
 
     function selectDurationOption(baseId, duration) {
-      const opt14 = document.getElementById(`opt-14-${baseId}`);
-      const opt30 = document.getElementById(`opt-30-${baseId}`);
-      
+
+      const opt14 =
+        document.getElementById(
+          `opt-14-${baseId}`
+        );
+
+      const opt30 =
+        document.getElementById(
+          `opt-30-${baseId}`
+        );
+
+
       if (!opt14 || !opt30) return;
 
+
       if (duration === 14) {
+
         opt14.classList.add('selected');
         opt30.classList.remove('selected');
+
       } else {
+
         opt30.classList.add('selected');
         opt14.classList.remove('selected');
+
       }
+
     }
+
 
     function handleProductSelect(baseId) {
-      const product = PRODUCTS_DATA.find(p => p.baseId === baseId);
+
+      const product =
+        PRODUCTS_DATA.find(
+          p => p.baseId === baseId
+        );
+
       if (!product) return;
 
-      const selectedRadio = document.querySelector(`input[name="duration-${baseId}"]:checked`);
-      const duration = selectedRadio ? parseInt(selectedRadio.value) : 14;
-      const price = duration === 30 ? product.p30 : product.p14;
 
-      addToCart(product.baseId, product.title, product.category, duration, price);
+      const selectedRadio =
+        document.querySelector(
+          `input[name="duration-${baseId}"]:checked`
+        );
+
+
+      const duration =
+        selectedRadio
+          ? parseInt(selectedRadio.value)
+          : 14;
+
+
+      const price =
+        duration === 30
+          ? product.p30
+          : product.p14;
+
+
+      addToCart(
+        product.baseId,
+        product.title,
+        product.category,
+        duration,
+        price
+      );
+
     }
+
+
+    /* =========================================
+       CATEGORY
+    ========================================= */
 
     function filterCategory(cat, btn) {
+
       currentCategory = cat;
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+      document
+        .querySelectorAll('.tab-btn')
+        .forEach(
+          b => b.classList.remove('active')
+        );
+
       btn.classList.add('active');
+
       renderProducts();
+
     }
 
-    /* CART LOGIC WITH SINGLE-SELECTION CHECK */
-    function addToCart(baseId, title, category, duration, price) {
-      const fullId = `${baseId}-${duration}`;
-      
-      // Cek apakah produk yang sama dengan durasi BERBEDA sudah ada
-      const existingConflictIndex = cart.findIndex(item => item.baseId === baseId && item.duration !== duration);
+
+    /* =========================================
+       CART
+    ========================================= */
+
+    function addToCart(
+      baseId,
+      title,
+      category,
+      duration,
+      price
+    ) {
+
+      const fullId =
+        `${baseId}-${duration}`;
+
+
+      const existingConflictIndex =
+        cart.findIndex(
+          item =>
+            item.baseId === baseId &&
+            item.duration !== duration
+        );
+
 
       if (existingConflictIndex > -1) {
-        const existingItem = cart[existingConflictIndex];
-        document.getElementById('conflict-msg').innerText = `Anda sudah memilih ${title} untuk ${existingItem.duration} Hari. Ganti menjadi ${duration} Hari?`;
-        
-        document.getElementById('btn-confirm-replace').onclick = function() {
-          cart.splice(existingConflictIndex, 1);
-          cart.push({ id: fullId, baseId, title, category, duration, price });
+
+        const existingItem =
+          cart[existingConflictIndex];
+
+
+        document.getElementById(
+          'conflict-msg'
+        ).innerText =
+          `Anda sudah memilih ${title} untuk ${existingItem.duration} Hari. Ganti menjadi ${duration} Hari?`;
+
+
+        document.getElementById(
+          'btn-confirm-replace'
+        ).onclick = function() {
+
+          cart.splice(
+            existingConflictIndex,
+            1
+          );
+
+          cart.push({
+            id: fullId,
+            baseId,
+            title,
+            category,
+            duration,
+            price
+          });
+
+
           saveAndUpdateCart();
+
           closeModal('conflict-modal');
+
           openCart();
+
         };
 
+
         openModal('conflict-modal');
+
         return;
+
       }
 
-      // Jika durasi persis sama, hindari duplicate
-      const existingSame = cart.find(item => item.id === fullId);
+
+      const existingSame =
+        cart.find(
+          item => item.id === fullId
+        );
+
+
       if (!existingSame) {
-        cart.push({ id: fullId, baseId, title, category, duration, price });
+
+        cart.push({
+          id: fullId,
+          baseId,
+          title,
+          category,
+          duration,
+          price
+        });
+
       }
+
 
       saveAndUpdateCart();
+
       openCart();
+
     }
+
 
     function removeFromCart(id) {
-      cart = cart.filter(item => item.id !== id);
+
+      cart =
+        cart.filter(
+          item => item.id !== id
+        );
+
       saveAndUpdateCart();
+
     }
+
 
     function saveAndUpdateCart() {
-      localStorage.setItem('prc_cart', JSON.stringify(cart));
+
+      localStorage.setItem(
+        'prc_cart',
+        JSON.stringify(cart)
+      );
+
       updateCartUI();
+
     }
+
 
     function updateCartUI() {
-      document.getElementById('cart-count').innerText = cart.length;
-      const cartContent = document.getElementById('cart-content');
-      const cartFooter = document.getElementById('cart-footer');
+
+      document.getElementById(
+        'cart-count'
+      ).innerText = cart.length;
+
+
+      const cartContent =
+        document.getElementById(
+          'cart-content'
+        );
+
+
+      const cartFooter =
+        document.getElementById(
+          'cart-footer'
+        );
+
 
       if (cart.length === 0) {
+
         cartContent.innerHTML = `
-          <div style="text-align: center; padding: 40px 0; color: var(--text-muted);">
-            <p style="margin-bottom: 12px;">Keranjang masih kosong</p>
-            <button class="btn-hero-sec" onclick="closeCart()" style="font-size: 12px; padding: 8px 16px;">Pilih Latihan</button>
+
+          <div style="
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-muted);
+          ">
+
+            <p style="margin-bottom: 12px;">
+              Keranjang masih kosong
+            </p>
+
+            <button
+              class="btn-hero-sec"
+              onclick="closeCart()"
+              style="
+                font-size: 12px;
+                padding: 8px 16px;
+              ">
+              Pilih Latihan
+            </button>
+
           </div>
+
         `;
-        cartFooter.style.display = 'none';
+
+        cartFooter.style.display =
+          'none';
+
         return;
+
       }
 
-      cartFooter.style.display = 'block';
+
+      cartFooter.style.display =
+        'block';
+
       cartContent.innerHTML = '';
+
       let total = 0;
 
+
       cart.forEach(item => {
+
         total += item.price;
-        const row = document.createElement('div');
-        row.className = 'cart-item';
+
+
+        const row =
+          document.createElement('div');
+
+        row.className =
+          'cart-item';
+
+
         row.innerHTML = `
+
           <div>
-            <div class="cart-item-title">${item.title}</div>
-            <div class="cart-item-sub">${item.category} • ${item.duration} Hari</div>
-            <div style="font-weight: 700; font-size: 13px; margin-top: 2px;">Rp${item.price.toLocaleString('id-ID')}</div>
+
+            <div class="cart-item-title">
+              ${item.title}
+            </div>
+
+            <div class="cart-item-sub">
+              ${item.category} • ${item.duration} Hari
+            </div>
+
+            <div style="
+              font-weight: 700;
+              font-size: 13px;
+              margin-top: 2px;
+            ">
+              Rp${item.price.toLocaleString('id-ID')}
+            </div>
+
           </div>
-          <button class="btn-remove" onclick="removeFromCart('${item.id}')">Hapus</button>
+
+
+          <button
+            class="btn-remove"
+            onclick="removeFromCart('${item.id}')">
+            Hapus
+          </button>
+
         `;
+
+
         cartContent.appendChild(row);
+
       });
 
-      document.getElementById('cart-total').innerText = `Rp${total.toLocaleString('id-ID')}`;
+
+      document.getElementById(
+        'cart-total'
+      ).innerText =
+        `Rp${total.toLocaleString('id-ID')}`;
+
     }
+
 
     function openCart() {
+
       updateCartUI();
-      document.getElementById('cart-drawer').style.display = 'flex';
+
+      document.getElementById(
+        'cart-drawer'
+      ).style.display = 'flex';
+
     }
+
 
     function closeCart() {
-      document.getElementById('cart-drawer').style.display = 'none';
+
+      document.getElementById(
+        'cart-drawer'
+      ).style.display = 'none';
+
     }
 
-    /* MODAL HELPERS */
+
+    /* =========================================
+       MODALS
+    ========================================= */
+
     function openModal(id) {
-      document.getElementById(id).style.display = 'flex';
+
+      document.getElementById(
+        id
+      ).style.display = 'flex';
+
     }
+
 
     function closeModal(id) {
-      document.getElementById(id).style.display = 'none';
+
+      document.getElementById(
+        id
+      ).style.display = 'none';
+
     }
 
-    /* CHECKOUT FLOW */
+
+    /* =========================================
+       CHECKOUT
+    ========================================= */
+
     function goToCheckout() {
+
       closeCart();
-      const summary = document.getElementById('checkout-summary');
+
+
+      const summary =
+        document.getElementById(
+          'checkout-summary'
+        );
+
+
       let total = 0;
-      let html = '<strong>Pesanan Anda:</strong><ul style="margin-top:6px; padding-left:16px;">';
+
+
+      let html =
+        '<strong>Pesanan Anda:</strong>' +
+        '<ul style="margin-top:6px; padding-left:16px;">';
+
 
       cart.forEach(item => {
+
         total += item.price;
-        html += `<li>${item.title} (${item.duration} Hari) - Rp${item.price.toLocaleString('id-ID')}</li>`;
+
+        html += `
+          <li>
+            ${item.title}
+            (${item.duration} Hari)
+            - Rp${item.price.toLocaleString('id-ID')}
+          </li>
+        `;
+
       });
 
-      html += `</ul><div style="margin-top:8px; font-weight:800;">Total: Rp${total.toLocaleString('id-ID')}</div>`;
+
+      html += `
+        </ul>
+
+        <div style="
+          margin-top:8px;
+          font-weight:800;
+        ">
+          Total:
+          Rp${total.toLocaleString('id-ID')}
+        </div>
+      `;
+
+
       summary.innerHTML = html;
 
-      openModal('checkout-modal');
+
+      openModal(
+        'checkout-modal'
+      );
+
     }
+
 
     function processPayment() {
-      const name = document.getElementById('cust-name').value;
-      const email = document.getElementById('cust-email').value;
-      const phone = document.getElementById('cust-phone').value;
+
+      const name =
+        document.getElementById(
+          'cust-name'
+        ).value.trim();
+
+
+      const email =
+        document.getElementById(
+          'cust-email'
+        ).value.trim();
+
+
+      const phone =
+        document.getElementById(
+          'cust-phone'
+        ).value.trim();
+
 
       if (!name || !email || !phone) {
-        alert('Mohon lengkapi Data Peserta.');
+
+        alert(
+          'Mohon lengkapi Data Peserta.'
+        );
+
         return;
+
       }
 
-      alert('Mengarahkan ke Sistem Pembayaran QRIS...');
+
+      alert(
+        'Mengarahkan ke Sistem Pembayaran QRIS...'
+      );
+
+
       cart = [];
+
       saveAndUpdateCart();
-      closeModal('checkout-modal');
+
+      closeModal(
+        'checkout-modal'
+      );
+
     }
+
+
+    /* =========================================
+       LOGIN
+    ========================================= */
 
     function performLogin() {
-      closeModal('login-modal');
-      openModal('dashboard-modal');
+
+      closeModal(
+        'login-modal'
+      );
+
+      openModal(
+        'dashboard-modal'
+      );
+
     }
 
-    /* INIT */
+
+    /* =========================================
+       INIT
+    ========================================= */
+
     renderProducts();
+
     updateCartUI();
+
   </script>
+
 </body>
 </html>
